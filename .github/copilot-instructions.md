@@ -1,0 +1,1 @@
+Use pink as the background color for actual button controls (`.btn`), but do not apply it to tab navigation controls (`.nav-link`) or other non-button elements.

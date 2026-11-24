@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "matcher": "*",
+        "command": "node .github/hooks/scripts/add-readme-modification-comment.cjs",
+        "timeoutSec": 30
+      }
+    ]
+  }
+}

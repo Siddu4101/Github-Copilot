@@ -1,3 +1,7 @@
+<!--
+Author: Sid
+Modification date: 2026-11-25 00:44:46 +05:30
+-->
 Learning github copilot
 
 Ai powered coding assistant for dev help like debug, write and understand
@@ -28,4 +32,62 @@ C:\Users\Sid\Learning\Github Copliot\overview\UIInetgratedBroserContext.png
 5. add area screenshot to the chat: u can select perticular area as a screenshot for the context
 
 
+
+
+Overview
+Feature	What it does
+Prompts	Gives Copilot a task
+Instructions	Tells Copilot how it should behave
+Skills	Provides reusable knowledge and workflows
+Hooks	Executes scripts automatically at specific events
+Tools	Allows Copilot to perform operations
+MCP	Connects Copilot to external systems and services
+
+
+How to use the instructions in copilot:(Rule book)
+Instructions are custom guidelines that tell GitHub Copilot how to understand, write, modify, and maintain code in project.
+
+EX:
+Use the button background as a pink for all the buttons
+follow the folder pattern with existing naming convention
+use functional components
+
+These are the rules u will write in a md file and these are added always in the context no need to explicitely tell
+
+u can have common instruction file under
+.github/copilot-instructions.md -> specific to github copilot 
+AGENTS.md -> any ai agent like claude,copilot,gemini etc.. refer this file by default and then checks for the specifc file like above
+
+also u can have path specific or topic specific like
+.github/instructions/frontend.instructions.md
+.github/instructions/backend.instructions.md
+
+
+Slash(/) commands or Prompts in copilot:
+These are essentially predefined prompts or shortcuts for common tasks.
+Ex: /explain or /test etc..
+
+u can create ur wown slash command or prompt by creating a file inside the 
+.github/prompts/addFileNameComment-prompt.md
+
+to invoke 
+/addFileNameComment #script.js  --> added the file name as a comment on the file itself # is for the file reference
+
+
+Hooks in copilot:
+These are automated actions that execute when a particular event occurs during an AI agent's workflow.
+Based on the events of the workflow like postToolUse, sessionStart etc.. you can configure some task to be run
+as a script
+
+EX: on any modification to this(readme) file add the comment 
+Author: Sid
+Modification date: {date-and-time}
+to the file top
+after the tool usage
+
+using /create-hook i created the hook it added 2 files 
+.github\hooks\readme-modification.json
+.github\hooks\scripts\add-readme-modification-comment.cjs
+
+and updated the author and the date time of this file at the top as a readme change
 

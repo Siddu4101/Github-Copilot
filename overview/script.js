@@ -1,3 +1,4 @@
+// script.js
 // Month labels for the chart
 const months = [
   "Jan",
